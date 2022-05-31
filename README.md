@@ -6,6 +6,7 @@ client
     email
     phone
     timestamps
+    active
 
 project
     project_id
@@ -21,8 +22,7 @@ task
     name
     description
     project_id
-    status
-    priority
+    done
     due_date
     created_at
     updated_at
