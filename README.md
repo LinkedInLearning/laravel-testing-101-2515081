@@ -32,6 +32,13 @@ client_project
     client_id
     project_id
 
+User can be related to client, task
+
+user types :
+    admin
+    client
+
+
 #Features to implement
 Here's the list of Roadmap features you need to try to implement in your code:
 

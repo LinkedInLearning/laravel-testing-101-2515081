@@ -20,7 +20,7 @@
 <div class="min-h-screen bg-gray-100 grid auto-cols-[min-content_1fr] auto-rows-[min-content_min-content_1fr]">
 @include('layouts.navigation')
 
-    <!-- Page Heading -->
+<!-- Page Heading -->
     <header class="bg-white shadow col-span-2 grid-rows-2">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
             {{ $header }}
@@ -30,15 +30,23 @@
     <!-- Page Side nav -->
     <aside class="bg-white col-span-1 grid-rows-2 px-6 pt-4 bg-slate-700 text-white">
         <x-admin.nav-link href="{{ route('dashboard') }}">Dashboard</x-admin.nav-link>
-        <x-admin.nav-link href="{{ route('dashboard') }}">Users</x-admin.nav-link>
-        <x-admin.nav-link href="{{ route('dashboard') }}">Clients</x-admin.nav-link>
+        <x-admin.nav-link href="{{ route('admin.clients.index') }}">Users</x-admin.nav-link>
+        <x-admin.nav-link href="{{ route('admin.clients.index') }}">Clients</x-admin.nav-link>
         <x-admin.nav-link href="{{ route('dashboard') }}">Projects</x-admin.nav-link>
         <x-admin.nav-link href="{{ route('dashboard') }}">Tasks</x-admin.nav-link>
     </aside>
 
     <!-- Page Content -->
     <main class="col-span-1 grid-rows-2">
-        {{ $slot }}
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 bg-white border-b border-gray-200">
+                        {{ $slot }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 </div>
 </body>

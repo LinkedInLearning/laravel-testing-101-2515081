@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\ClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,13 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+
+    Route::resource(
+        'clients', ClientController::class,
+    )->except(['show'])
+        ->names('admin.clients');
+
+});
+
+require __DIR__ . '/auth.php';
