@@ -1,6 +1,11 @@
 <x-app-layout>
 
     <x-admin.header>{{ __('Clients') }}</x-admin.header>
+    <x-admin.buttons>
+        <x-admin.button-outline href="{{ route('admin.clients.create') }}">
+            {{ __('New client') }}
+        </x-admin.button-outline>
+    </x-admin.buttons>
 
     @forelse($clients as $client)
         @if($loop->first)
@@ -38,4 +43,5 @@
         <p>No clients found</p>
     @endforelse
 
+    {{ $clients->links() }}
 </x-app-layout>

@@ -20,7 +20,7 @@ class CreateOrUpdateClientRequest extends FormRequest
             'name' => 'required|string|max:255',
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('clients')->ignore($this->client->id ?? null)],
             'phone' => 'nullable|string|max:255',
-            'active' => 'required|boolean',
+            'active' => 'sometimes|same:active',
         ];
     }
 }

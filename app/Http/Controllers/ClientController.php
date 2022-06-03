@@ -20,29 +20,22 @@ class ClientController extends Controller
     public function index()
     {
         return view('admin.client.index', [
-            'clients' => Client::all(),
+            'clients' => Client::paginate(15),
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.client.createOrEdit');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreClientRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreClientRequest $request)
+    public function store(CreateOrUpdateClientRequest $request): RedirectResponse
     {
-        //
+        $client = Client::create($request->validated());
+
+        session()->flash('message', 'Client created successfully');
+
+        return redirect()->route('admin.clients.edit', ['client' => $client]);
     }
 
     public function edit(Client $client): Factory|View|Application
@@ -54,7 +47,9 @@ class ClientController extends Controller
 
     public function update(CreateOrUpdateClientRequest $request, Client $client): RedirectResponse
     {
-        $client->update($request->validated());
+        $active = $request->has('active');
+
+        $client->update(array_merge($request->validated(), ['active' => $active]));
 
         session()->flash('message', 'Client updated successfully');
 

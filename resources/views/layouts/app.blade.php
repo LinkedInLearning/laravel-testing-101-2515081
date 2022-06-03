@@ -22,8 +22,9 @@
 
 <!-- Page Heading -->
     <header class="bg-white shadow col-span-2 grid-rows-2">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex flex-row justify-between">
             {{ $header }}
+            {{ $buttons ?? '' }}
         </div>
     </header>
 
@@ -48,6 +49,8 @@
             </div>
         </div>
     </main>
+
+    <x-admin.flash/>
 </div>
 </body>
 </html>
