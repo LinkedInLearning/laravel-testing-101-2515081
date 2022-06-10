@@ -73,3 +73,9 @@ Here's the list of Roadmap features you need to try to implement in your code:
 ##Extra
 
 - [ ] Automated Tests for CRUD Operations
+
+
+
+# next
+- [x] client delete
+- [x] client add photo to form
