@@ -31,10 +31,7 @@
     <!-- Page Side nav -->
     <aside class="bg-white col-span-1 grid-rows-2 px-6 pt-4 bg-slate-700">
         <x-admin.nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">Dashboard</x-admin.nav-link>
-        <x-admin.nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">Users</x-admin.nav-link>
         <x-admin.nav-link href="{{ route('admin.clients.index') }}" :active="request()->routeIs('admin.clients.index')">Clients</x-admin.nav-link>
-        <x-admin.nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">Projects</x-admin.nav-link>
-        <x-admin.nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">Tasks</x-admin.nav-link>
     </aside>
 
     <!-- Page Content -->

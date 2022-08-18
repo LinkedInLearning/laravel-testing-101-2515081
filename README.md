@@ -24,12 +24,17 @@ To resolve this issue:
 
 ## Installing
 1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
+    - [list of requirements for course]
 2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. [Course-specific instructions]
+3. Clone **.env.example** renaming to **.env** . 
+4. Edit .env with your db credentials and the project url.
+5. Run **composer update**.
+6. Run **php artisan key:generate**.
+7. Run **php artisan migrate --seed**.
+8. Login on /login with the email **me@linkedinlearner.com** and the password **me@linkedinlearner.com**
 
 
-[0]: # (Replace these placeholder URLs with actual course URLs)
+[0]: (Replace these placeholder URLs with actual course URLs)
 
 [lil-course-url]: https://www.linkedin.com/learning/
 [lil-thumbnail-url]: http://
