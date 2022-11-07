@@ -1,5 +1,5 @@
 # COURSENAME
-This is the repository for the LinkedIn Learning course `course-name`. The full course is available from [LinkedIn Learning][lil-course-url].
+This is the repository for the LinkedIn Learning course Laravel: Testing 101. The full course is available from [LinkedIn Learning][lil-course-url].
 
 ![course-name-alt-text][lil-thumbnail-url] 
 
@@ -24,7 +24,11 @@ To resolve this issue:
 
 ## Installing
 1. To use these exercise files, you must have the following installed:
-    - [list of requirements for course]
+    - php8 server
+    - mysql
+    - sqlite
+    - code editor
+    - git, when using the course git repository
 2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
 3. Clone **.env.example** renaming to **.env** . 
 4. Edit .env with your db credentials and the project url.
