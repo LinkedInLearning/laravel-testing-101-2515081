@@ -29,7 +29,7 @@ it('client photo is stored when creating a client', function () {
 
     $this->assertNotNull($client->photo);
 
-    actingAs($user)->get(url('client/' . $client->photo))->assertStatus(200);
+    Storage::assertExists('clients/' . $client->photo);
 
     Storage::fake();
 });
