@@ -80,7 +80,7 @@ class ClientController extends Controller
 
     private function savePhoto(UploadedFile $file, string $clientName = ''): string
     {
-        $fileName = $clientName . '_' . rand(0, 1000000) . "." . $file->getClientOriginalExtension();
+        $fileName = \Str::slug($clientName, '_') . '_' . rand(0, 1000000) . "." . $file->getClientOriginalExtension();
 
         Storage::putFileAs('clients', $file, $fileName);
 
