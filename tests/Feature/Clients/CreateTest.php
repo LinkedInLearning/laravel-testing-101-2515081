@@ -33,3 +33,13 @@ it('client photo is stored when creating a client', function () {
 
     Storage::fake();
 });
+
+it('gets photo from unsplash when none is provided', function () {
+    HTTP::fake([
+        'https://api.unsplash.com/photos/random' => HTTP::response([
+            'urls' => [
+                'thumb' => 'https://placehold.jp/150x150.jpg'
+            ]
+        ])
+    ]);
+});

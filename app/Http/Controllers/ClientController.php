@@ -10,6 +10,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
+use Str;
 
 class ClientController extends Controller
 {
@@ -33,6 +34,8 @@ class ClientController extends Controller
 
         if ($request->hasFile('photo')) {
             $client->photo = $this->savePhoto($request->file('photo'), $client->name);
+        } else {
+            $client->photo = $this->getPlaceholderPhoto($client->name);
         }
 
         $client->save();
@@ -98,5 +101,25 @@ class ClientController extends Controller
         }
 
         return $this->savePhoto($file, $client->name);
+    }
+
+    private function getPlaceholderPhoto($name)
+    {
+        $response = \Http::withHeaders([
+            'Authorization' => 'Client-ID ' . env('UNSPLASH_ACCESS_KEY')
+        ])
+            ->get('https://api.unsplash.com/photos/random');
+
+        if (!$response->ok()) {
+            return null;
+        }
+
+        $fileName = Str::slug($name, '_') . '_' . rand(0, 1000000) . ".jpg";
+
+        if(Storage::putFileAs('clients', $response->json('urls.thumb'), $fileName)){
+            return $fileName;
+        }
+
+        return null;
     }
 }
