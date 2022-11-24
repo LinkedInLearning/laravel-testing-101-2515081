@@ -41,5 +41,5 @@ To resolve this issue:
 
 [0]: (Replace these placeholder URLs with actual course URLs)
 
-[lil-course-url]: https://www.linkedin.com/learning/
+[lil-course-url]: https://github.com/LinkedInLearning/laravel-testing-101-2515081
 [lil-thumbnail-url]: http://
