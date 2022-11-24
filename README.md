@@ -24,11 +24,11 @@ To resolve this issue:
 
 ## Installing
 1. To use these exercise files, you must have the following installed:
-   - php8 server
-   - mysql
-   - sqlite
-   - code editor
-   - git, when using the course git repository
+    - php8 server
+    - mysql
+    - sqlite
+    - code editor
+    - git, when using the course git repository
 2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
 3. Clone **.env.example** renaming to **.env** .
 4. Edit .env with your db credentials and the project url.
@@ -41,5 +41,5 @@ To resolve this issue:
 
 [0]: (Replace these placeholder URLs with actual course URLs)
 
-[lil-course-url]: https://www.linkedin.com/learning/
+[lil-course-url]: https://github.com/LinkedInLearning/laravel-testing-101-2515081
 [lil-thumbnail-url]: http://
