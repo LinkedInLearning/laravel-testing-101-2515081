@@ -5,6 +5,7 @@ use App\Models\User;
 use Illuminate\Http\UploadedFile;
 use function Pest\Laravel\actingAs;
 use \Illuminate\Support\Facades\Storage;
+use function Pest\testDirectory;
 
 it('client photo is stored when creating a client', function () {
 
@@ -35,11 +36,36 @@ it('client photo is stored when creating a client', function () {
 });
 
 it('gets photo from unsplash when none is provided', function () {
-    HTTP::fake([
+    Http::fake([
         'https://api.unsplash.com/photos/random' => HTTP::response([
             'urls' => [
-                'thumb' => 'https://placehold.jp/150x150.jpg'
+                'thumb' => testDirectory('photos/client.jpg')
             ]
         ])
     ]);
+
+    Storage::fake();
+
+    $user = User::factory()->create();
+
+    $respose = actingAs($user)->post('/admin/clients', [
+        'name' => 'Manuel Fernandes',
+        'email' => 'manuel@manuelfernandes.com'
+    ]);
+
+    $this->assertDatabaseHas('clients',[
+        'name' => 'Manuel Fernandes',
+        'email' => 'manuel@manuelfernandes.com'
+    ]);
+
+    $client = Client::where('email', 'manuel@manuelfernandes.com')->first();
+
+    $this->assertNotNull($client->photo);
+
+    Storage::assertExists('clients/' . $client->photo);
+
+    $this->assertFileEquals(testDirectory('photos/client.jpg'), Storage::path('clients/' . $client->photo));
+
+    Storage::fake();
+
 });
