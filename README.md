@@ -1,9 +1,12 @@
-# Laravel: Testing 101
-This is the repository for the LinkedIn Learning course Laravel: Testing 101. The full course is available from [LinkedIn Learning][lil-course-url].
+# Laravel Testing 101
+This is the repository for the LinkedIn Learning course Laravel Testing 101. The full course is available from [LinkedIn Learning][lil-course-url].
 
-![course-name-alt-text][lil-thumbnail-url] 
+![Laravel Testing 101][lil-thumbnail-url] 
 
-_See the readme file in the main branch for updated instructions and information._
+An integral part of Laravel development is testing what has been coded. Automated testing is the most reliable form of testing, and one that often causes confusion to the junior developer—especially regarding where to start. In this course, Ana Lisboa guides you through writing tests, testing a Laravel app, and understanding where to start testing and what needs to be tested. She also goes over API testing, test coverage, and more.
+
+
+
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
 
@@ -24,22 +27,20 @@ To resolve this issue:
 
 ## Installing
 1. To use these exercise files, you must have the following installed:
-    - php8 server
-    - mysql
-    - sqlite
-    - code editor
-    - git, when using the course git repository
+	- [list of requirements for course]
 2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. Clone **.env.example** renaming to **.env** . 
-4. Edit .env with your db credentials and the project url.
-5. Run **composer update**.
-6. Run **php artisan key:generate**.
-7. Run **php artisan migrate --seed**.
-8. Login on /login with the email **me@linkedinlearner.com** and the password **me@linkedinlearner.com**
+3. [Course-specific instructions]
 
 
-[0]: (Replace these placeholder URLs with actual course URLs)
+### Instructor
 
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: http://
+Ana Lisboa 
+                            
 
+
+                            
+
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/ana-lisboa).
+
+[lil-course-url]: https://www.linkedin.com/learning/laravel-testing-101?dApp=59033956
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/C560DAQEXxyJ86PyJ_A/learning-public-crop_675_1200/0/1674079596581?e=2147483647&v=beta&t=MoGKCX0tg7KWQd8fpujURmM4irVhqbu6uqH9pK30s9k
